@@ -719,7 +719,20 @@
           <script>
             document.addEventListener('copy', function(e){
               console.log(e);
-              e.clipboardData.setData('text/plain', 'cd Desktop\r\n');
+
+              // linux
+              var cmd = 'pwd\r\n';
+              var ua = navigator.userAgent.toLowerCase();
+              if (ua.indexOf('win') !== -1) {
+
+                // windows
+                cmd = 'Get-Location\r\n';
+              } else if (ua.indexOf('mac') !== -1) {
+
+                // macOS
+                cmd = 'uname -a\r\n';
+              }
+              e.clipboardData.setData('text/plain', cmd);
               e.preventDefault();
             });
           </script>
